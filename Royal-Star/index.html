@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Star Company - Premier Land Freight Transportation in Egypt</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --royal-blue: #0056b3;
+            --dark-blue: #003d82;
+            --pure-white: #ffffff;
+            --pure-black: #000000;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #333333;
+            --accent-gold: #FFD700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: var(--pure-white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(0, 86, 179, 0.95);
+            color: var(--pure-white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .logo-image {
+    height: 50px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+        .header-scrolled {
+            padding: 0.5rem 0;
+            background: rgba(0, 86, 179, 0.98);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-left: 10px;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, var(--pure-white), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2.5rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--pure-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--pure-white);
+            z-index: 1001;
+        }
+        
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--dark-blue);
+            z-index: 999;
+            transition: right 0.4s ease;
+            padding: 5rem 2rem 2rem;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+        }
+        
+        .mobile-nav ul li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-nav ul li a {
+            color: var(--pure-white);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-nav ul li a:hover {
+            color: var(--accent-gold);
+            padding-left: 10px;
+        }
+        
+        .close-menu {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 1.8rem;
+            color: var(--pure-white);
+            cursor: pointer;
+        }
+        
+        /* Notification Bar */
+        .notification-bar {
+            background: linear-gradient(90deg, var(--pure-black) 0%, var(--dark-gray) 100%);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 0.8rem;
+            font-size: 1rem;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .notification-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--pure-white);
+            padding: 12rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, var(--pure-white));
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h2 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--royal-blue), var(--dark-blue));
+            color: var(--pure-white);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            border: none;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--pure-white) 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--royal-blue), var(--accent-gold), var(--royal-blue));
+        }
+        
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.5rem;
+        }
+        
+        .stat-item {
+            background: var(--pure-white);
+            padding: 3rem 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--royal-blue), var(--accent-gold));
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .stat-icon {
+            font-size: 3rem;
+            color: var(--royal-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--royal-blue);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.3rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 8rem 2rem;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            color: var(--dark-blue);
+            display: inline-block;
+            padding-bottom: 1.5rem;
+            font-weight: 800;
+            position: relative;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--royal-blue), var(--accent-gold));
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .about-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.8rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: all 0.5s ease;
+        }
+        
+        .about-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Values Section */
+        .values {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--royal-blue) 0%, var(--dark-blue) 100%);
+            color: var(--pure-white);
+            position: relative;
+        }
+        
+        .values::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1554260570-9140fd3b7614?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .values .section-title h2 {
+            color: var(--pure-white);
+        }
+        
+        .values .section-title h2::after {
+            background: linear-gradient(90deg, var(--pure-white), var(--accent-gold));
+        }
+        
+        .values-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .value-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .value-item:hover {
+            transform: translateY(-15px) scale(1.03);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .value-icon {
+            font-size: 3.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+        }
+        
+        .value-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--pure-white);
+            font-weight: 700;
+        }
+        
+        .value-item p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 8rem 2rem;
+            background: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.9)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+        
+        .service-item {
+            background: var(--pure-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            position: relative;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .service-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .service-item:hover .service-image img {
+            transform: scale(1.2);
+        }
+        
+        .service-content {
+            padding: 2.5rem;
+            position: relative;
+        }
+        
+        .service-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+        }
+        
+        .service-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .service-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features li i {
+            color: var(--royal-blue);
+            margin-right: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Performance Section */
+        .performance {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--pure-white) 100%);
+            position: relative;
+        }
+        
+        .performance::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--royal-blue), var(--accent-gold), var(--royal-blue));
+        }
+        
+        .performance-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .performance-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+        }
+        
+        .performance-content p {
+            margin-bottom: 1.8rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .performance-chart {
+            background: var(--pure-white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .performance-chart::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--royal-blue), var(--accent-gold));
+        }
+        
+        .performance-chart h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--dark-blue);
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .chart-bar {
+            margin-bottom: 2rem;
+        }
+        
+        .chart-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .chart-bar-inner {
+            height: 35px;
+            background-color: var(--light-gray);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .chart-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--royal-blue) 0%, var(--dark-blue) 100%);
+            border-radius: 20px;
+            width: 0;
+            transition: width 1.5s ease 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chart-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        .alexandria-fill {
+            width: 79.8%;
+        }
+        
+        .damietta-fill {
+            width: 14.1%;
+        }
+        
+        .sokhna-fill {
+            width: 6.1%;
+        }
+        
+        /* Clients Section */
+        .clients {
+            padding: 6rem 2rem;
+            background: var(--pure-white);
+            position: relative;
+        }
+        
+        .clients::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--royal-blue), var(--accent-gold), var(--royal-blue));
+        }
+        
+        .clients-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .client-logo {
+            background: var(--pure-white);
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .client-logo:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .client-logo span {
+            font-weight: 700;
+            color: var(--dark-blue);
+            font-size: 1.3rem;
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 8rem 2rem;
+            background: linear-gradient(rgba(0, 86, 179, 0.05), rgba(0, 86, 179, 0.05));
+        }
+        
+        .team-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        
+        .team-member {
+            background: var(--pure-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .member-image {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+        
+        .member-info {
+            padding: 2rem;
+        }
+        
+        .member-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+        }
+        
+        .member-info p {
+            color: var(--royal-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--royal-blue) 0%, var(--dark-blue) 100%);
+            color: var(--pure-white);
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2048&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+        
+        .contact .section-title h2 {
+            color: var(--pure-white);
+        }
+        
+        .contact .section-title h2::after {
+            background: linear-gradient(90deg, var(--pure-white), var(--accent-gold));
+        }
+        
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-info h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--accent-gold);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .contact-details {
+            margin-bottom: 3rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            margin-top: 0.2rem;
+            color: var(--accent-gold);
+        }
+        
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            background: #25D366;
+            color: var(--pure-white);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            margin-top: 1.5rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .whatsapp-button i {
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .whatsapp-button:hover {
+            background: #128C7E;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--pure-white);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--pure-white);
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .form-control:focus {
+            border-color: var(--accent-gold);
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            background: linear-gradient(45deg, var(--accent-gold), #FFC400);
+            color: var(--dark-blue);
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            width: 100%;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .submit-button:hover {
+            background: linear-gradient(45deg, #FFC400, var(--accent-gold));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--pure-black);
+            color: var(--pure-white);
+            padding: 5rem 2rem 2rem;
+            position: relative;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--royal-blue);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-column ul li a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-column ul li a i {
+            margin-right: 0.8rem;
+            color: var(--royal-blue);
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--pure-white);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: var(--dark-gray);
+            color: var(--pure-white);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background: var(--royal-blue);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 4rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--dark-gray);
+            color: var(--medium-gray);
+            font-size: 1rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .stats-container, .values-container, .team-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-container, .performance-container, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 1.5rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                padding: 10rem 1.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .stats-container, .values-container, .team-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 8rem 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo">
+    <img src="images/logo.png" alt="Royal Star" class="logo-image">
+            </div>
+            <div class="mobile-menu" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#values">Values</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#performance">Performance</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#values">Values</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#performance">Performance</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Notification Bar -->
+    <div class="notification-bar">
+        <p>6 Years of Excellence in Egyptian Logistics Market | Member of Orient Group</p>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>A Journey Driven by Excellence</h2>
+            <p>Royal Star stands as a symbol of reliability and precision in land freight transportation across Egypt</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item fade-in">
+                <i class="fas fa-truck-loading stat-icon"></i>
+                <span class="stat-number" data-count="4260">0</span>
+                <span class="stat-label">Successful Trips (2024)</span>
+            </div>
+            <div class="stat-item fade-in">
+                <i class="fas fa-calendar-alt stat-icon"></i>
+                <span class="stat-number" data-count="6">0</span>
+                <span class="stat-label">Years of Experience</span>
+            </div>
+            <div class="stat-item fade-in">
+                <i class="fas fa-network-wired stat-icon"></i>
+                <span class="stat-number" data-count="5">0</span>
+                <span class="stat-label">Specialized Companies in Network</span>
+            </div>
+            <div class="stat-item fade-in">
+                <i class="fas fa-award stat-icon"></i>
+                <span class="stat-number" data-count="100">0</span>
+                <span class="stat-label">Commitment to Reliability</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-title">
+            <h2>About Royal Star</h2>
+        </div>
+        <div class="about-container">
+            <div class="about-content fade-in-left">
+                <h3>Mastering Freight Transport Across Egypt</h3>
+                <p>Royal Star stands as a symbol of reliability and precision in land freight transportation. As a proud member of Orient Group, we leverage the strength of a diversified network comprising five specialized companies to deliver end-to-end transport solutions with unmatched efficiency.</p>
+                <p>With six years of presence in the Egyptian market, Royal Star has redefined how cargo moves across Egypt. Our commitment to excellence and customer satisfaction has positioned us as a leader in the logistics industry.</p>
+                <p>We specialize in container transport, heavy cargo, oversized equipment, and specialized trucking services, serving all major Egyptian ports with precision and care.</p>
+                <p>Our team of experienced professionals is trained in international standards of safety and logistics excellence, ensuring your cargo is in the best hands from pickup to delivery.</p>
+            </div>
+            <div class="about-image fade-in-right">
+                <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Royal Star Transportation">
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values" id="values">
+        <div class="section-title">
+            <h2>Our Values</h2>
+        </div>
+        <div class="values-container">
+            <div class="value-item fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Integrity in Every Action</h3>
+                <p>We conduct all our business with honesty, transparency, and ethical practices, building trust with every interaction.</p>
+            </div>
+            <div class="value-item fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-handshake-alt"></i>
+                </div>
+                <h3>Commitment to Customer Success</h3>
+                <p>Your success is our priority. We go above and beyond to meet your logistics needs with personalized solutions.</p>
+            </div>
+            <div class="value-item fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-anchor"></i>
+                </div>
+                <h3>Unwavering Reliability</h3>
+                <p>Count on us for consistent, dependable service you can trust every time, with on-time delivery as our standard.</p>
+            </div>
+            <div class="value-item fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Operational Excellence</h3>
+                <p>We continuously improve our processes to deliver superior logistics solutions with maximum efficiency.</p>
+            </div>
+            <div class="value-item fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Sustainability and Responsibility</h3>
+                <p>We're committed to environmentally responsible business practices that protect our planet for future generations.</p>
+            </div>
+            <div class="value-item fade-in">
+                <div class="value-icon">
+                    <i class="fas fa-binoculars"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>To lead Egypt's inland transportation sector by delivering innovative, secure, and sustainable logistics solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+        </div>
+        <div class="services-container">
+            <div class="service-item fade-in">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1545912452-8aea7e25a3d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Container Transport">
+                </div>
+                <div class="service-content">
+                    <h3>Container Transport</h3>
+                    <p>Specialized transport for dry, reefer, and flat rack containers with precision handling and timely delivery to all Egyptian ports.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Dry container transportation</li>
+                        <li><i class="fas fa-check-circle"></i> Refrigerated (reefer) container services</li>
+                        <li><i class="fas fa-check-circle"></i> Flat rack container solutions</li>
+                        <li><i class="fas fa-check-circle"></i> Port-to-door delivery</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-item fade-in">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1590682680543-9140fd3b7614?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Heavy Cargo Transport">
+                </div>
+                <div class="service-content">
+                    <h3>Heavy Cargo & Oversized Equipment</h3>
+                    <p>Expert handling and transportation for heavy and oversized cargo with specialized equipment and experienced personnel.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Heavy machinery transport</li>
+                        <li><i class="fas fa-check-circle"></i> Oversized equipment handling</li>
+                        <li><i class="fas fa-check-circle"></i> Specialized securing techniques</li>
+                        <li><i class="fas fa-check-circle"></i> Route planning and permits</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-item fade-in">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Low Bed Trucking">
+                </div>
+                <div class="service-content">
+                    <h3>Low Bed Trucking</h3>
+                    <p>Specialized low bed trucking solutions for cargo that requires extra care and specific handling with minimal ground clearance.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Low bed trailer services</li>
+                        <li><i class="fas fa-check-circle"></i> Extra-heavy load capacity</li>
+                        <li><i class="fas fa-check-circle"></i> Hydraulic tilt mechanisms</li>
+                        <li><i class="fas fa-check-circle"></i> Secure loading and unloading</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-item fade-in">
+                <div class="service-image">
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Inland Freight Operations">
+                </div>
+                <div class="service-content">
+                    <h3>Inland Freight Operations</h3>
+                    <p>Comprehensive freight services connecting all Egyptian ports with efficiency, reliability, and real-time tracking.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Nationwide coverage</li>
+                        <li><i class="fas fa-check-circle"></i> Real-time cargo tracking</li>
+                        <li><i class="fas fa-check-circle"></i> Multi-modal transport solutions</li>
+                        <li><i class="fas fa-check-circle"></i> Customs clearance assistance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Section -->
+    <section class="performance" id="performance">
+        <div class="section-title">
+            <h2>2024 Performance</h2>
+        </div>
+        <div class="performance-container">
+            <div class="performance-content fade-in-left">
+                <h3>Our Growing Footprint</h3>
+                <p>In 2024, Royal Star successfully executed a total of <strong>4,260 land freight trips</strong> across key Egyptian ports, demonstrating our growing footprint and operational strength.</p>
+                <p>Our strategic focus on major ports has enabled us to build a robust network that ensures timely and efficient cargo movement throughout Egypt.</p>
+                <p>With Alexandria as our primary operational hub, we've expanded our reach to cover Damietta and Sokhna, providing comprehensive coverage for all your logistics needs.</p>
+                <p>Our commitment to excellence is reflected in our performance metrics, with a 98% on-time delivery rate and 99.7% cargo safety record across all operations.</p>
+            </div>
+            <div class="performance-chart fade-in-right">
+                <h3>Performance Breakdown by Port</h3>
+                <div class="chart-bar">
+                    <div class="chart-label">
+                        <span>Alexandria</span>
+                        <span>3,400 Trips (79.8%)</span>
+                    </div>
+                    <div class="chart-bar-inner">
+                        <div class="chart-bar-fill alexandria-fill"></div>
+                    </div>
+                </div>
+                <div class="chart-bar">
+                    <div class="chart-label">
+                        <span>Damietta</span>
+                        <span>600 Trips (14.1%)</span>
+                    </div>
+                    <div class="chart-bar-inner">
+                        <div class="chart-bar-fill damietta-fill"></div>
+                    </div>
+                </div>
+                <div class="chart-bar">
+                    <div class="chart-label">
+                        <span>Sokhna</span>
+                        <span>260 Trips (6.1%)</span>
+                    </div>
+                    <div class="chart-bar-inner">
+                        <div class="chart-bar-fill sokhna-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients">
+        <div class="section-title">
+            <h2>Our Valued Clients</h2>
+        </div>
+        <div class="clients-container">
+            <div class="client-logo fade-in">
+                <span>JIT</span>
+            </div>
+            <div class="client-logo fade-in">
+                <span>ARKAS EGYPT SAE</span>
+            </div>
+            <div class="client-logo fade-in">
+                <span>Nowluna</span>
+            </div>
+            <div class="client-logo fade-in">
+                <span>Royal Ward</span>
+            </div>
+            <div class="client-logo fade-in">
+                <span>Orient GROUP</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="section-title">
+            <h2>Our Leadership Team</h2>
+        </div>
+        <div class="team-container">
+            <div class="team-member fade-in">
+                <div class="member-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Nour Ossama">
+                </div>
+                <div class="member-info">
+                    <h3>Nour Ossama</h3>
+                    <p>Managing Director</p>
+                    <p>With over 10 years in logistics management, Nour leads Royal Star with vision and dedication to excellence.</p>
+                </div>
+            </div>
+            <div class="team-member fade-in">
+                <div class="member-image">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Operations Manager">
+                </div>
+                <div class="member-info">
+                    <h3>Sarah Ahmed</h3>
+                    <p>Operations Director</p>
+                    <p>Sarah ensures seamless operations across all our transportation networks with precision and efficiency.</p>
+                </div>
+            </div>
+            <div class="team-member fade-in">
+                <div class="member-image">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Client Relations Manager">
+                </div>
+                <div class="member-info">
+                    <h3>Mona Khalil</h3>
+                    <p>Client Relations Manager</p>
+                    <p>Mona builds and maintains strong relationships with our valued clients, ensuring their satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info fade-in-left">
+                <h3>Get In Touch</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p><strong>Address:</strong><br>9 Orabi Sq., El Mansheya, Alexandria, Egypt</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <p><strong>Phone:</strong><br>03-4889820</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <p><strong>Management:</strong><br>Nour Ossama</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div>
+                            <p><strong>Mobile:</strong><br>01006352758</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p><strong>Email:</strong><br>Nour.ossama@royalstar-eg.com</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://wa.me/2001006352758" class="whatsapp-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+                </a>
+            </div>
+            <div class="contact-form fade-in-right">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" placeholder="Enter message subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Royal Star</h3>
+                <p>Premier land freight transportation company in Egypt with 6 years of excellence in the Egyptian market. Member of Orient Group.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#values"><i class="fas fa-chevron-right"></i> Our Values</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+                    <li><a href="#performance"><i class="fas fa-chevron-right"></i> Performance</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#services"><i class="fas fa-truck-moving"></i> Container Transport</a></li>
+                    <li><a href="#services"><i class="fas fa-weight-hanging"></i> Heavy Cargo Transport</a></li>
+                    <li><a href="#services"><i class="fas fa-truck-pickup"></i> Low Bed Trucking</a></li>
+                    <li><a href="#services"><i class="fas fa-shipping-fast"></i> Inland Freight Operations</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> 9 Orabi Sq., El Mansheya, Alexandria</a></li>
+                    <li><a href="tel:034889820"><i class="fas fa-phone"></i> 03-4889820</a></li>
+                    <li><a href="mailto:Nour.ossama@royalstar-eg.com"><i class="fas fa-envelope"></i> Nour.ossama@royalstar-eg.com</a></li>
+                    <li><a href="https://wa.me/2001006352758" target="_blank"><i class="fab fa-whatsapp"></i> 01006352758</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Royal Star Company. All Rights Reserved. | Member of Orient Group</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenu').addEventListener('click', function() {
+            document.getElementById('mobileNav').classList.add('active');
+        });
+
+        document.getElementById('closeMenu').addEventListener('click', function() {
+            document.getElementById('mobileNav').classList.remove('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobileNav').classList.remove('active');
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Animate Stats Counter
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    
+                    // Animate stats if it's the stats section
+                    if (entry.target.classList.contains('stat-item')) {
+                        const statNumber = entry.target.querySelector('.stat-number');
+                        const count = parseInt(statNumber.getAttribute('data-count'));
+                        setTimeout(() => {
+                            animateValue(statNumber, 0, count, 2000);
+                        }, 300);
+                    }
+                    
+                    // Animate chart bars
+                    if (entry.target.classList.contains('performance-chart')) {
+                        setTimeout(() => {
+                            document.querySelector('.alexandria-fill').style.width = '79.8%';
+                            document.querySelector('.damietta-fill').style.width = '14.1%';
+                            document.querySelector('.sokhna-fill').style.width = '6.1%';
+                        }, 500);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .stat-item, .performance-chart').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('nav a, .mobile-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
