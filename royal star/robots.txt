@@ -1,0 +1,57 @@
+# Royal Star Company - Robots.txt File
+# Generated for optimal SEO and security
+
+User-agent: *
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+
+# Main pages - Allow crawling
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /performance.html
+Allow: /careers.html
+Allow: /contact.html
+
+# Disallow sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /.htaccess
+Disallow: /config/
+Disallow: /logs/
+
+# Crawl delay to prevent server overload
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.royalstar-eg.com/sitemap.xml
+
+# Special instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Block AI training bots
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: GPTBot
+Disallow: /
+User-agent: CCBot
+Disallow: /

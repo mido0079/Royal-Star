@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- الصفحة الرئيسية - Highest Priority -->
+  <url>
+    <loc>https://www.royalstar-eg.com/</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- صفحة الخدمات - High Priority -->
+  <url>
+    <loc>https://www.royalstar-eg.com/services.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- صفحة الاتصال - High Priority -->
+  <url>
+    <loc>https://www.royalstar-eg.com/contact.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- صفحة الأداء - Medium Priority -->
+  <url>
+    <loc>https://www.royalstar-eg.com/performance.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- صفحة عن الشركة - Medium Priority -->
+  <url>
+    <loc>https://www.royalstar-eg.com/about.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- صفحة الوظائف - Lower Priority -->
+  <url>
+    <loc>https://www.royalstar-eg.com/careers.html</loc>
+    <lastmod>2024-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
